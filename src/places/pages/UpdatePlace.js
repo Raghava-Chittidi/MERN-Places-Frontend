@@ -28,7 +28,7 @@ const UpdatePlace = () => {
     const fetchSinglePlace = async () => {
       try {
         const data = await sendRequest(
-          `${process.env.REACT_BACKEND_URL}/places/${placeId}`
+          `${process.env.REACT_APP_BACKEND_URL}/places/${placeId}`
         );
         setPlace(data.place);
         setFormState(
@@ -63,7 +63,7 @@ const UpdatePlace = () => {
 
     try {
       await sendRequest(
-        `${process.env.REACT_BACKEND_URL}/places/${placeId}`,
+        `${process.env.REACT_APP_BACKEND_URL}/places/${placeId}`,
         "PATCH",
         JSON.stringify(body),
         {

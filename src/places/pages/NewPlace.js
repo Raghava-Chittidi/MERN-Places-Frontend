@@ -56,7 +56,7 @@ const NewPlace = () => {
     formData.append("image", formState.inputs[3].value);
 
     try {
-      await sendRequest(`${process.env.REACT_BACKEND_URL}/places`, "POST", formData, {
+      await sendRequest(`${process.env.REACT_APP_BACKEND_URL}/places`, "POST", formData, {
         Authorization: "Bearer " + authCtx.token,
       });
       navigate("/", { replace: true });

@@ -26,7 +26,7 @@ const PlaceItem = (props) => {
     setShowDeleteWarning(false);
     try {
       await sendRequest(
-        `${process.env.REACT_BACKEND_URL}/places/${props.id}`,
+        `${process.env.REACT_APP_BACKEND_URL}/places/${props.id}`,
         "DELETE",
         null,
         { Authorization: "Bearer " + authCtx.token }
@@ -89,7 +89,7 @@ const PlaceItem = (props) => {
           {isLoading && <LoadingSpinner asOverlay />}
           <div className="place-item__image">
             <img
-              src={`${process.env.REACT_STATIC_URL}/${props.image}`}
+              src={`${process.env.REACT_APP_STATIC_URL}/${props.image}`}
               alt={props.title}
             ></img>
           </div>
